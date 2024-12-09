@@ -1,0 +1,41 @@
+// Sobrescribe las variables ANTES de importar Bootstrap
+$btn-font-size: 1.25rem; /* Tamaño de fuente */
+$primary: #9ccf8ecc; // Color principal
+
+
+// Importa todo Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-image: url(../img/smile.jpg);
+    background-size: 800px;
+    background-color: rgba(255, 255, 255, 0.431);
+    background-blend-mode: lighten; 
+}
+
+.card {
+  width: 100%; /* Asegura un ancho amplio */
+  max-width: 700px; /* Limita el ancho en pantallas grandes */
+  min-height: 400px; /* Establece una altura mínima */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Estilo sombra */
+}
+
+.blockquote {
+  font-style: italic;
+  font-size: 1.25rem; /* Tamaño de letra */
+  margin-left: 1rem; /* Separación del bloque */
+  margin-right: 1rem;
+}
+
+.blockquote p {
+  position: relative;
+}
+
+.blockquote p::before,
+.blockquote p::after {
+  content: '"'; /* Comillas simples */
+  font-size: 2rem;
+  color: gray; /* Color de las comillas */
+}
