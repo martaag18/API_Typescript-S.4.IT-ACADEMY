@@ -3,18 +3,27 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",       
-    "start": "node dist/index.js", 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && vite build",
+    "start": "vite",
+    "dev": "vite",
+    "preview": "vite preview",
+    "watch-sass": "sass --watch src/styles.scss:css/styles.css",
+    "lint": "eslint src/**/*.ts",
+    "watch": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Project using TypeScript, Bootstrap, Sass, and Vite",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
     "eslint": "^9.16.0",
-    "typescript": "^5.7.2"
+    "sass": "^1.82.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
   }
 }
