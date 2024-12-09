@@ -3,17 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css">
     <title>SPRING 4 - API & TYPESCRIPT</title>
   </head>
   <body>
-    <h1>JOKES</h1>
-    <div class="jokes">
-      <p>
-        Why do birds fly south for the winter? Because it's too far to walk.
-      </p>
+    <!-- Título en la parte superior -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <span id="current-date" class="ms-4 mt-2"></span> <!-- Aquí se mostrará la fecha -->
+      </div>
+    </nav>
+    <div class="container vh-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="card p-4">
+            <!-- Título en la parte superior -->
+             <div class="card-header bg-transparent text-center mb-5">
+              <h2 class>Ready to laugh?🤣</h2>
+             </div>
+             <div class="card-body">
+              <div class="row justify-content-center mt-4">
+                <div class="col-12">
+                  <div class="jokes">
+                    <blockquote class="blockquote">
+                      <p id="joke-text" class="text-center mb-5">
+                        Why do birds fly south for the winter? Because it's too far to walk.
+                      </p>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto text-center mt-5">
+                <button id="btn-next" class="btn btn-primary">Check next joke</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <button id="btn-next">Next joke</button>
-
-    <script type="module" src="dist/index.js"></script>
+    <script type="module" src="/dist/index.js"></script>
   </body>
 </html>
+
+
+
