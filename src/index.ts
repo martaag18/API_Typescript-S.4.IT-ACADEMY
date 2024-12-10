@@ -1,41 +1,27 @@
+import { getJoke, handleScore } from "./jokeFunctions.js"; 
 
-import { JokeResponse } from "./interfaces";
-
-const $joke = document.getElementById("joke-text") as  HTMLParagraphElement;
 const $button = document.getElementById("btn-next") as HTMLButtonElement;
+const $score1 = document.getElementById("score-1") as HTMLButtonElement;
+const $score2 = document.getElementById("score-2") as HTMLButtonElement;
+const $score3 = document.getElementById("score-3") as HTMLButtonElement;
 const $dataNavBar = document.getElementById("current-date") as HTMLButtonElement;
 
 
-addEventListener("DOMContentLoaded", (e) => {
-    const today = new Date();
-    const formattedDateTime = today.toLocaleString("es-ES");
-    $dataNavBar.textContent = formattedDateTime;
+addEventListener("DOMContentLoaded", (e) => { //Add Date NavBar
+  const today = new Date();
+  const formattedDateTime = today.toLocaleString("es-ES");
+  $dataNavBar.textContent = formattedDateTime;
 });
 
-$button.addEventListener("click", (e) => {
-    e.preventDefault();
-    getJoke();
+
+$button.addEventListener("click", (e) => { //Call function getJoke
+  e.preventDefault();
+  getJoke(); 
 });
 
-async function getJoke(): Promise<void> {
-    try {
-        const resp = await fetch('https://icanhazdadjoke.com/', {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+$score1.addEventListener("click", () => handleScore(1)); //Report Joke
+$score2.addEventListener("click", () => handleScore(2)); //Report Joke
+$score3.addEventListener("click", () => handleScore(3)); //Report Joke
 
-        if (!resp.ok) {
-            throw {
-                status: resp.status,
-                statusText: resp.statusText || "Unknown error"
-            };
-        }
 
-        const json: JokeResponse = await resp.json();
-        $joke.textContent = `${json.joke}`;
-    } catch (err: any) {
-        const message = err.statusText || "An error occurred";
-        $joke.textContent = `Error ${err.status}: ${message}`;
-    }
-}
+
