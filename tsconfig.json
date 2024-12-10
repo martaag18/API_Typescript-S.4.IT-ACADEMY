@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",                // Versión de JavaScript que se generará
-    "module": "es6",              // Sistema de módulos compatible con Node.js
-    "rootDir": "./src",                // Carpeta donde están los archivos TypeScript
-    "outDir": "./dist",                // Carpeta donde se guardarán los archivos JavaScript compilados
-    "esModuleInterop": true,           // Habilitar la interoperabilidad con ES Modules
-    "strict": true,                    // Habilitar verificaciones estrictas de tipos
-    "forceConsistentCasingInFileNames": true, // Asegura consistencia en el uso de mayúsculas/minúsculas
-    "skipLibCheck": true               // Omite la verificación de archivos .d.ts
+    "module": "ES6",
+    "moduleResolution": "node",
+    "outDir": "./dist",  // Carpeta donde se compilarán los archivos JS
+    "target": "ES6",  // Define el estándar JS que quieres usar
+    "esModuleInterop": true,  // Permite la importación de módulos sin la extensión .js
+    "strict": true,  // Habilita la verificación estricta
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"],             // Incluir todos los archivos .ts en la carpeta src
-  "exclude": ["node_modules"]          // Excluir la carpeta node_modules
+  "include": [
+    "src/**/*.ts"
+, "src/index.ts"  ]
 }
