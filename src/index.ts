@@ -1,4 +1,4 @@
-import { getJoke, handleScore } from "./jokeFunctions.js"; 
+import { getRandomJoke, handleScore} from "./jokeFunctions.js"; 
 import { updateNavbarDate } from "./navbarFunctions.js";
 import { addWeather } from "./navbarFunctions.js";
 
@@ -16,7 +16,7 @@ addEventListener("DOMContentLoaded", (e) => {
 
 $button.addEventListener("click", (e) => { 
   e.preventDefault();
-  getJoke(); 
+  getRandomJoke(); 
 });
 
 $score1.addEventListener("click", () => handleScore(1)); //Report Joke
