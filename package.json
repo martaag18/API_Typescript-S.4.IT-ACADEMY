@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && vite build",
-    "start": "vite",
-    "dev": "vite",
-    "preview": "vite preview",
-    "watch-sass": "sass --watch src/styles.scss:css/styles.css",
-    "lint": "eslint src/**/*.ts",
-    "watch": "tsc --watch"
-  },
+  "start": "vite",
+  "dev": "vite",
+  "preview": "vite preview",
+  "watch-sass": "sass --watch src/styles.scss:css/styles.css",
+  "lint": "eslint src/**/*.ts",
+  "watch": "tsc --watch",
+  "build:scss": "sass --watch src/styles.scss:css/styles.css", 
+  "build:ts": "tsc --watch",
+  "build": "concurrently \"npm run build:scss\" \"npm run build:ts\""
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
+    "concurrently": "^9.1.0",
     "eslint": "^9.16.0",
     "sass": "^1.82.0",
     "typescript": "^5.7.2",
