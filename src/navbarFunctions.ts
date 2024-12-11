@@ -1,3 +1,5 @@
+const $weather = document.getElementById("current-weather") as HTMLElement;
+
 export function updateNavbarDate(): void {
   const $dataNavBar = document.getElementById("current-date") as HTMLElement;
   const today = new Date();
@@ -6,35 +8,45 @@ export function updateNavbarDate(): void {
 }
 
 export async function addWeather() {
-  const $weather = document.getElementById("current-weather") as HTMLElement;
-
-  const apiKey = "c4cd65ce2838446fa43100831241012"; // Tu API Key
-  const city = "Barcelona"; // Ciudad para la cual quieres el clima
+  
+  const apiKey = "c4cd65ce2838446fa43100831241012"; 
+  const city = "Barcelona"; 
   const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
   try {
     const response = await fetch(url);
     console.log("Response", response);
 
-    // Comprobar si la respuesta es exitosa
     if (!response.ok) {
-      // Si la respuesta no es exitosa (código de estado 2xx), lanzamos un error.
       throw new Error(`Error ${response.status} ${response.statusText}`);
     }
     const result = await response.json();
     console.log("Result", result);
+    console.log(result.current.condition.text);
 
-    const temperature = result.current.temp_c; // Temperatura en Celsius
-    const description = result.current.condition.text; // Descripción del clima
-    const cityName = result.location.name;
+    const temperature: number = result.current.temp_c; 
+    const description: string = result.current.condition.text; 
+    const cityName: string = result.location.name;
+    const icon: string = result.current.condition.icon;
 
     $weather.innerHTML = 
       `Weather: ${description}<br>
       Temperature: ${temperature}°C<br>
       City: ${cityName}`;
 
+      addIcon(icon);
+
     } catch (error: any) {
       $weather.innerHTML = `Error: ${error.message || 'Unable to fetch weather data'}`;
     }
+  
 }
 
+//EX 6 - weather icon
+
+function addIcon(icon: string) {
+  const $icon = document.createElement("img");
+  $icon.src = icon;
+  $icon.classList.add("icon-weather");
+  $weather.appendChild($icon);
+}

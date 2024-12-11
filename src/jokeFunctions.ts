@@ -74,3 +74,13 @@ export const handleScore = (score: number) => {
   }
   console.log(reportJokes);
 };
+
+//EX6
+
+export function changeJokeBackground() {
+  const jokeBackground = document.getElementById("joke-background") as HTMLElement;
+  const shapes = ['blob1.png', 'blob2.png', 'blob3.png', 'blob4.png'];
+  const randomIndex = Math.floor(Math.random() * shapes.length); 
+  console.log(shapes);
+  jokeBackground.style.backgroundImage = `url('img/${shapes[randomIndex]}')`;
+}

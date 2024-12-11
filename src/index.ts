@@ -1,6 +1,7 @@
 import { getRandomJoke, handleScore} from "./jokeFunctions.js"; 
 import { updateNavbarDate } from "./navbarFunctions.js";
 import { addWeather } from "./navbarFunctions.js";
+import { changeJokeBackground } from "./jokeFunctions.js";
 
 const $button = document.getElementById("btn-next") as HTMLButtonElement;
 const $score1 = document.getElementById("score-1") as HTMLButtonElement;
@@ -17,6 +18,7 @@ addEventListener("DOMContentLoaded", (e) => {
 $button.addEventListener("click", (e) => { 
   e.preventDefault();
   getRandomJoke(); 
+  changeJokeBackground();
 });
 
 $score1.addEventListener("click", () => handleScore(1)); //Report Joke
