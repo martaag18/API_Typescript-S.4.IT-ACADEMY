@@ -3,57 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <title>SPRING 4 - API & TYPESCRIPT</title>
   </head>
   <body>
-    <!-- Título en la parte superior -->
+    <!-- NavBar -->
+  <header>
     <nav class="navbar">
-      <div class="container-fluid">
-        <span id="current-date" class="ms-4 mt-2"></span> <!-- date -->
-        <span id="current-weather" class="ms-4 mt-2"></span> <!-- weather -->
+      <div class="container-fluid mt-2">
+        <span id="current-date"></span>
+        <span id="current-weather" class="me-2"></span>
       </div>
     </nav>
-    <div class="container vh-100">
-      <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-12 col-md-6">
-          <div class="card p-4">
-            <!-- Título en la parte superior -->
-             <div class="card-header bg-transparent text-center mb-5">
-              <h2 class>Ready to laugh?🤣</h2>
-             </div>
-             <div class="card-body">
-              <div class="row justify-content-center mt-4">
-                <div class="col-12">
-                  <div class="jokes">
-                    <blockquote class="blockquote">
-                      <p id="joke-text" class="text-center mb-5">
-                        Why do birds fly south for the winter? Because it's too far to walk.
-                      </p>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto text-center mt-5">
-                <button id="btn-next" class="btn btn-primary">Check next joke</button>
-              </div>
-              <div class="row mt-5">
-                <div class=" col-12">
-                  <h4>Rate the Joke (score 1-3):</h4>
-                  <button id="score-1" class="btn-rate btn btn-danger me-4">1</button>
-                  <button id="score-2" class="btn-rate btn btn-warning me-4">2</button>
-                  <button id="score-3" class="btn-rate btn btn-success me-5">3</button>
-                </div>
-              </div>   
-              </div>
+  </header>
+    <!-- MAIN -->
+    <main class="container-fluid main-container">
+      <div row>
+        <div class="col-12 justify-content-center align-items-center text-center mt-4">
+          <h2>🤣Ready to laugh?🤣</h2>
+        </div>
+       </div>
+      <div id="joke-background" class="joke-container container-fluid d-flex flex-column justify-content-center align-items-center text-center">
+          <div class="row justify-content-center align-items-center text-center">
+            <div class="col-8">
+              <blockquote class="blockquote">
+              <p id="joke-text" class="mb-3 mt-2">
+                Why do birds fly south for the winter? Because it's too far to
+                walk.
+              </p>
+            </blockquote>
+            </div>
+          </div>  
+          <div class="row justify-content-center align-items-center text-center">
+            <div class="col-12 mt-3">
+              <h4>Please, rate the Joke 😜😜</h4>
             </div>
           </div>
-        </div>
+          <div class="row justify-content-center align-items-center text-center">
+            <div class="col-7">
+              <button id="score-1" class="btn-rate btn btn-danger">1&#128533</button>
+            </div>
+            <div class="col-7">
+              <button id="score-2" class="btn-rate btn btn-warning">2&#128578</button>
+            </div>
+            <div class="col-7">
+              <button id="score-3" class="btn-rate btn btn-success">3&#128569</button>
+            </div>
+          </div>
+          <div class="row mt-3 justify-content-center align-items-center text-center">
+            <div class="col-6 me-4 mt-1">
+              <button id="btn-next" class="btn btn-primary">Next</button>
+            </div>
+          </div>  
       </div>
-    </div>
+    </main>
+
     <script type="module" src="/dist/index.js"></script>
   </body>
 </html>
-
-
 
